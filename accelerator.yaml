@@ -1,7 +1,7 @@
 accelerator:
   displayName: Aetna Java App-Service
   description: Spring Boot application that accesses an SQL database. Option to include service binding to PosgreSQL database.
-  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/oip.png?raw=true
+  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/oip.jpg?raw=true
   tags:
     - java
     - azure
