@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Collections;
 
-import com.cvs.notification.NotificationClient;
 import com.example.pm.repository.PrescriptionRepository;
 import com.example.pm.model.Patient;
 import com.example.pm.model.Prescription;
@@ -71,10 +70,4 @@ public class MainController {
 		return  result != null ? result : Collections.emptyList();
 	}
 
-	@PostMapping(path="/prescription/refill/{patientEmail}/{drugName}")
-	public @ResponseBody String refill(@PathVariable String patientEmail, @PathVariable String drugName) {
-		NotificationClient client = new NotificationClient();
-		client.callNotification(patientEmail, "Refilled " + drugName);
-		return "";
-	}
 }
