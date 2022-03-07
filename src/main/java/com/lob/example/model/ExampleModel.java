@@ -1,16 +1,14 @@
-package com.example.users;
+package com.lob.example.model;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity // This tells Hibernate to make a table out of this class
-@Table(name="USERS") // USER is a reserved word for many SQL databases
-public class User {
+@Entity 
+@Table(name="USERS")
+public class ExampleModel {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 
 	private String name;
