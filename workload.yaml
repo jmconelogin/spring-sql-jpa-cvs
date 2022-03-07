@@ -13,5 +13,5 @@ spec:
   source:
     git:
       ref:
-        branch: feature/addComponent
+        branch: release/demo1
       url: https://github.com/jmconelogin/spring-sql-jpa-cvs
