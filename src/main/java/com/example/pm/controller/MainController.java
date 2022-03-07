@@ -16,7 +16,7 @@ import com.example.pm.model.Prescription;
 import com.example.pm.repository.PatientRepository;
 
 @Controller
-@RequestMapping(path="/demo") // This means URL's start with /demo (after Application path)
+@RequestMapping(path="/demo")
 public class MainController {
 	@Autowired
 	private PatientRepository patientRepository;
@@ -50,21 +50,16 @@ public class MainController {
 	
 	@GetMapping(path="/patients/all")
 	public @ResponseBody Iterable<Patient> getAllPatients() {
-		// This returns a JSON or XML with the users
-
 		return patientRepository.findAll();
 	}
 
 	@GetMapping(path="/prescriptions")
 	public @ResponseBody Iterable<Prescription> getPrescriptionsByPatient(@RequestParam String patient_name) {
-		// This returns a JSON or XML with the prescriptions for a patient
-
 		return prescriptionRepository.findByPatientName(patient_name);
 	}
 
 	@GetMapping(path="/prescriptions/all")
 	public @ResponseBody Iterable<Prescription> getAllPrescriptions() {
-		// This returns a JSON or XML with all prescriptions
 		Iterable<Prescription> result = prescriptionRepository.findAll();
 		return  result != null ? result : Collections.emptyList();
 	}
