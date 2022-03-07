@@ -3,8 +3,8 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   annotations:
-    autoscaling.knative.dev/max-scale: "1"
-    autoscaling.knative.dev/min-scale: "1"
+    autoscaling.knative.dev/maxScale: "1"
+    autoscaling.knative.dev/minScale: "1"
   labels:
     apps.tanzu.vmware.com/workload-type: web
   name: cvs-demo2
