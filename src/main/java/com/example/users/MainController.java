@@ -29,6 +29,7 @@ public class MainController {
 		n.setEmail(email);
 		userRepository.save(n);
 		return "Saved";
+		//This is a test of my ability to commit
 	}
 
 	@PostMapping(path="/addPrescription") // Map ONLY POST Requests
