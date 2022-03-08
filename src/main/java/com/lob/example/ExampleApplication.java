@@ -1,13 +1,13 @@
-package com.example.users;
+package com.lob.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class UsersApplication {
+public class ExampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UsersApplication.class, args);
+		SpringApplication.run(ExampleApplication.class, args);
 	}
 
 }
