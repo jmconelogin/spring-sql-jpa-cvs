@@ -1,8 +1,9 @@
 package com.example.users.BDD;
 
-import com.example.users.UsersApplication;
+import com.lob.example.ExampleApplication;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -13,6 +14,7 @@ import io.restassured.response.Response;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.http.HttpStatus;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -23,7 +25,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 
 @ActiveProfiles("test")
-@ContextConfiguration(classes = UsersApplication.class)
+@ContextConfiguration(classes = ExampleApplication.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @CucumberContextConfiguration
 public class StepDefinition  {
@@ -36,29 +38,30 @@ public class StepDefinition  {
 
     Response response;
 
-/*    @Given("User wants to publish prescription")
-    public void user_wants_to_publish_prescription(){
+    Map<String,String> parameters=new HashMap<>();
 
-}*/
-    @When("a post request is made to \\/demo\\/addPrescription")
-    public void aPostRequestIsMadeToDemoAddPrescription() {
+    @Given("The user provides username {string} and email {string}")
+    public void user_wants_to_publish_prescription(String userName,String email){
+   parameters.put("name",userName);
+        parameters.put("email",email);
+}
+    @When("a post request is made to {string} {string}")
+    public void aPostRequestIsMadeToDemoAddPrescription(String basePath, String endPoint) {
 
         BasicConfigurator.configure();
-        logger.info("Testing Here: ");
-        Map<String,String> queryParams=new HashMap<>();
-        queryParams.put("name","Test");
-        queryParams.put("email","testing@email.com");
-        response = RestAssured.given().contentType("application/json").queryParams(queryParams)
-                .when().post("http://localhost:" + 8080 + "/demo/addPrescription").then().extract().response();
-        System.out.println(response.statusCode());
+        logger.info("Testing Here: "+parameters);
+        response = RestAssured.given().contentType("application/json").queryParams(parameters)
+                .when().post("http://localhost:" + 8080 + "/"+basePath+"/"+endPoint).then().extract().response();
+        System.out.println("StatusCode here: "+response.body().prettyPrint());
     }
 @Then("the response will be saved")
     public void the_response_will_be_saved(){
-        Assert.assertEquals("SAVED",response.statusLine());
+        Assert.assertEquals("Saved",response.body().prettyPrint());
 }
 @And("I should get back a status code of 200")
     public void status_is_success(){
-    Assert.assertEquals(200,response.statusCode());
+    Assert.assertEquals(HttpStatus.SC_OK,response.statusCode());
 }
+
 
 }
