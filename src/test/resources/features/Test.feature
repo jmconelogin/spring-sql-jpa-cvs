@@ -1,6 +1,6 @@
 Feature: Users publish and retrieve prescriptions
 
-  Scenario Outline: Successful Post request publishes prescriptions
+  Scenario Outline: Successful Post request to add user
     Given The user provides username "<userName>" and email "<email>"
     When a post request is made to "<basePath>" "<endPoint>"
     Then the response will be saved
