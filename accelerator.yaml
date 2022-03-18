@@ -1,9 +1,7 @@
 accelerator:
   displayName: AEFW4Boot Kickstart Generator
-  description: Frameworks provides three AEFW4Boot / Spring Boot flavors of kickstarts:
-               - Spring Batch / Java JSR 352 oriented kickstart for deployment to batch servers
-               - RESTful / Microservice Minimal Spring Boot for deployment to containers / Azure
-               - Traditional Web kickstart almost identical to AEFW 3 kickstart
+  description: Frameworks provides three AEFW4Boot / Spring Boot flavors of kickstarts. 1. Spring Batch / Java JSR 352 oriented kickstart for deployment to batch servers
+RESTful / Microservice Minimal Spring Boot for deployment to containers / Azure. Traditional Web kickstart almost identical to AEFW 3 kickstart
   iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/OIP.jpg?raw=true
   tags:
     - java
@@ -20,7 +18,7 @@ accelerator:
     required: true
   - name: email2
     inputType: text
-    label: 
+    label: Email 2
     description: Email 2
     required: true
   - name: storageClassName
