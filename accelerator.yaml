@@ -1,28 +1,36 @@
 accelerator:
-  displayName: AEFW4Boot Kickstart Generator
-  description: Frameworks provides three AEFW4Boot / Spring Boot flavors of kickstarts:
-               - Spring Batch / Java JSR 352 oriented kickstart for deployment to batch servers
-               - RESTful / Microservice Minimal Spring Boot for deployment to containers / Azure
-               - Traditional Web kickstart almost identical to AEFW 3 kickstart
-  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/OIP.jpg?raw=true
+  displayName: CVS Java
+  description: Spring Boot application that accesses an SQL database. Option to include service binding to PosgreSQL database.
+  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/custom_logo.png?raw=true
   tags:
     - java
-    - spring
-    - microservice
     - azure
+    - spring
+    - jpa
+    - sql
+    - retail
+    - PBM
+    - k8
 
   # options for the UI
   options:
-  - name: email1
-    inputType: text
-    label : Two Email Contacts
-    description: Email 1
+  - name: deploymentType
+    inputType: select
+    choices:
+    - value: workload
+      text: TAP workload using PostgreSQL with service-binding
+    - value: none
+      text: Skip Kubernetes deployment
+    defaultValue: workload
     required: true
-  - name: email2
+  - name: postgresInstanceName
     inputType: text
-    label: 
-    description: Email 2
-    required: true
+    label: The name of the Postgres instance
+    description: The name of the Postgres instance to create using the Tanzu Postgres Operator
+    defaultValue: postgres-sample
+    dependsOn:
+      name: deploymentType
+      value: workload
   - name: storageClassName
     inputType: text
     label: The name of the storage class to use for the Postgres instance
