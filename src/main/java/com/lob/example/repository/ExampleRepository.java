@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 // CRUD refers Create, Read, Update, Delete
 
 public interface ExampleRepository extends CrudRepository<ExampleModel, Integer> {
-
+    // boring empty repo
 }
