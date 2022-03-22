@@ -8,6 +8,7 @@ metadata:
     - java
     - spring
     - cpp
+    - hcb
     - cobol
   links:
     - url: https://aefw4bootwebgen-oci.aetapps-qa.aetna.com/aefw4bootwebgen
