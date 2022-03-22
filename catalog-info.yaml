@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aetna-boot-kickstart
+  title: AEFW4Boot Kickstart Generator
+  description: Aetna Java Spring Boot Kickstart Generators. Contains kickstarts for batch, web and microservice Sprint Boot architecture
+  tags:
+    - java
+    - spring
+    - c++
+    - cobol
+    - HCB
+  links:
+    - url: https://aefw4bootwebgen-oci.aetapps-qa.aetna.com/aefw4bootwebgen
+      title: Kickstart Generator
+      icon: github
+  annotations:
+    github.com/project-slug: root/repository
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: legacy
+  lifecycle: production
+  owner: devsecops
+  system: aetna
