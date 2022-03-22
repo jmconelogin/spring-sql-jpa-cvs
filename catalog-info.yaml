@@ -9,7 +9,6 @@ metadata:
     - spring
     - cpp
     - cobol
-    - hcb
   links:
     - url: https://aefw4bootwebgen-oci.aetapps-qa.aetna.com/aefw4bootwebgen
       title: Kickstart Generator
