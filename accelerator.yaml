@@ -1,16 +1,13 @@
 accelerator:
-  displayName: CVS Java
+  displayName: Aenta Java
   description: Spring Boot application that accesses an SQL database. Option to include service binding to PosgreSQL database.
-  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/custom_logo.png?raw=true
+  iconUrl: https://github.com/jmconelogin/jmconelogin/blob/main/OIP.jpg?raw=true
   tags:
     - java
     - azure
     - spring
     - jpa
     - sql
-    - retail
-    - PBM
-    - k8
 
   # options for the UI
   options:
