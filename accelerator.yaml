@@ -18,9 +18,11 @@ accelerator:
     inputType: select
     choices:
     - value: workload
-      text: TAP workload using PostgreSQL with service-binding
+      text: AKS
     - value: none
-      text: Skip Kubernetes deployment
+      text: OpenShift OnPrem
+    - value: none2
+      text: AWS
     defaultValue: workload
     required: true
   - name: postgresInstanceName
@@ -33,8 +35,8 @@ accelerator:
       value: workload
   - name: storageClassName
     inputType: text
-    label: The name of the storage class to use for the Postgres instance
-    description: The name of the storage class to use for Postgres instance to create using the Tanzu Postgres Operator
+    label: ITPM Acronym
+    description: ITPM value for auto-registration of component
     defaultValue: standard
     dependsOn:
       name: deploymentType
